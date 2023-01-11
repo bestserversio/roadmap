@@ -80,10 +80,24 @@ struct serverResponse = {
 #### Query
 * **id** - The ID of the server.
 * **url** - The URL of the server (e.g. `bestservers.io/view/{url}`).
-* **name** - Match server name.
-* **map** - Match server map.
-* **tags** - Match server tags.
+* **name** - Match (partial) server name.
+* **map** - Match (partial) server map.
+* **tags** - Match (partial) server tags.
+* **limit** - Total amount of entries to retrieve.
 #### Response
 ```C
 return struct serverResponse{...};
+```
+
+## `api/servers/stats`
+### GET
+#### Query
+* **id** - The ID of the server.
+* **url** - The URL of the server (e.g. `bestservers.io/view/{url}`).
+* **startdate** - UNIX timestamp of start date.
+* **enddate** - UNIX timestamp of end date.
+* **limit** - Total amount of entries to retrieve.
+#### Response
+```C
+return struct userCountStatsMapping[]{...};
 ```
