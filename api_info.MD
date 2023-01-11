@@ -41,7 +41,7 @@ struct serverResponse = {
   struct userResponse users[];
   
   /* General Info */
-  char banner[256];                               // e.g. /images/servers/banners/<id>.png
+  char banner[256];                               // e.g. /images/servers/banners/{id}.png
   char name[256];
   char mapName[64];
   char shortDescription[512];
@@ -67,6 +67,10 @@ struct serverResponse = {
   char state[64];
   char country[32];
   char countryCode[2];
+  
+  /* HTML5/Web Support */
+  bool hasHTML5File;                            // loader file => /servers/{id}/loader.js
+  char HTML5Url[256];                           // For IFrame (e.g. example.com/gametest/index.html?ip={ip}&port={port})
 };
 ```
 
